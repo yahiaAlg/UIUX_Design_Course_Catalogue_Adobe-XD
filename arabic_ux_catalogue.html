@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="إتقان تصميم UI/UX باستخدام Adobe XD - دورة احترافية شاملة مع 23 وحدة، مشاريع عملية، وشهادة معترف بها في الصناعة. حول رؤيتك الإبداعية إلى تجارب رقمية احترافية.">
+    <meta name="keywords"
+        content="تصميم UI/UX، Adobe XD، تجربة المستخدم، واجهة المستخدم، دورة التصميم، النماذج الأولية، الرسوم التخطيطية">
+    <meta name="author" content="مؤسسة رفا السمعية والبصرية">
+    <title>إتقان تصميم UI/UX باستخدام Adobe XD - كتالوج الدورة الاحترافية</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+
+    <!-- Arabic and English Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --adobe-magenta: #FF61F6;
+            --adobe-dark-blue: #001E36;
+            --adobe-purple: #2D1B69;
+            --white: #FFFFFF;
+            --light-gray: #F8F9FA;
+            --medium-gray: #6C757D;
+            --dark-gray: #343A40;
+            --gradient: linear-gradient(135deg, var(--adobe-magenta) 0%, var(--adobe-purple) 100%);
+            --shadow: 0 10px 30px rgba(0, 30, 54, 0.1);
+            --shadow-hover: 0 20px 40px rgba(0, 30, 54, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            line-height: 1.8;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header Styles */
+        .header {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .header .subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--adobe-dark-blue);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Overview Grid */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .overview-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 97, 246, 0.1);
+        }
+
+        .overview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .card-title {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--adobe-dark-blue);
+        }
+
+        .card-content {
+            color: var(--medium-gray);
+        }
+
+        /* Table of Contents */
+        .toc-container {
+            background: var(--light-gray);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .phase {
+            margin-bottom: 3rem;
+        }
+
+        .phase-title {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--adobe-dark-blue);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .phase-badge {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .module-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-right: 4px solid var(--adobe-magenta);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .module-card:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .module-number {
+            color: var(--adobe-magenta);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .module-title {
+            font-weight: 600;
+            color: var(--adobe-dark-blue);
+            margin: 0.5rem 0;
+        }
+
+        .module-topics {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            list-style: none;
+        }
+
+        .module-topics li {
+            padding: 0.2rem 0;
+            position: relative;
+            padding-right: 1rem;
+        }
+
+        .module-topics li::before {
+            content: '←';
+            position: absolute;
+            right: 0;
+            color: var(--adobe-magenta);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            background: var(--white);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:nth-child(odd) {
+            background: linear-gradient(135deg, rgba(255, 97, 246, 0.05) 0%, rgba(45, 27, 105, 0.05) 100%);
+        }
+
+        .feature-card:hover {
+            border-color: var(--adobe-magenta);
+            transform: translateY(-3px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            font-weight: 600;
+            color: var(--adobe-dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        /* Pricing Section */
+        .pricing-card {
+            background: var(--white);
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            max-width: 500px;
+            margin: 0 auto;
+            border: 3px solid var(--adobe-magenta);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: 'الأفضل قيمة';
+            position: absolute;
+            top: 20px;
+            left: -30px;
+            background: var(--adobe-magenta);
+            color: var(--white);
+            padding: 0.5rem 2rem;
+            transform: rotate(-45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--adobe-dark-blue);
+            line-height: 1;
+        }
+
+        .price-period {
+            color: var(--medium-gray);
+            font-size: 1rem;
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: var(--white);
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 97, 246, 0.3);
+        }
+
+        /* Learning Outcomes */
+        .outcomes-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .outcome-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 97, 246, 0.05);
+            border-radius: 10px;
+            border-right: 4px solid var(--adobe-magenta);
+        }
+
+        .outcome-check {
+            color: var(--adobe-magenta);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--adobe-dark-blue);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        /* English text styling */
+        .en-text {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+            display: inline-block;
+        }
+
+        /* Project labels styling */
+        .project-label {
+            background: rgba(255, 97, 246, 0.1);
+            color: var(--adobe-magenta);
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .outcomes-list {
+                grid-template-columns: 1fr;
+            }
+
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .header {
+                background: var(--adobe-dark-blue) !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .cta-button,
+            .pricing-card::before {
+                display: none;
+            }
+
+            .section {
+                padding: 2rem 0;
+            }
+
+            .overview-card,
+            .module-card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .cta-button:focus,
+        .module-card:focus {
+            outline: 3px solid var(--adobe-magenta);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1>إتقان تصميم UI/UX باستخدام Adobe XD</h1>
+                <p class="subtitle">حول رؤيتك الإبداعية إلى تجارب رقمية احترافية</p>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">23</span>
+                        <span class="stat-label">وحدة شاملة</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">10</span>
+                        <span class="stat-label">مشاريع عملية</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">مدة شهر</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">موجه للصناعة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Course Overview -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">نظرة عامة على الدورة</h2>
+            <p class="section-subtitle">إتقان عملية تصميم UI/UX الكاملة من البحث إلى التسليم النهائي باستخدام سير عمل Adobe XD المعتمد في الصناعة</p>
+
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon">🎯</div>
+                    <h3 class="card-title">الجمهور المستهدف</h3>
+                    <div class="card-content">
+                        <ul style="list-style: none; padding: 0;">
+                            <li>• مصممي UI/UX الطموحين</li>
+                            <li>• مصممي الجرافيك المنتقلين للرقمي</li>
+                            <li>• مديري المنتجات والمطورين</li>
+                            <li>• المحترفين الإبداعيين الباحثين عن التخصص</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="card-icon">⚡</div>
+                    <h3 class="card-title">المتطلبات الأساسية</h3>
+                    <div class="card-content">
+                        <ul style="list-style: none; padding: 0;">
+                            <li>• معرفة أساسية بالحاسوب</li>
+                            <li>• عقلية إبداعية واهتمام بالتصميم</li>
+                            <li>• اشتراك Adobe Creative Cloud (موصى به)</li>
+                            <li>• لا يتطلب خبرة سابقة في XD</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="card-icon">📅</div>
+                    <h3 class="card-title">تنسيق الدورة</h3>
+                    <div class="card-content">
+                        <ul style="list-style: none; padding: 0;">
+                            <li>• دروس فيديو ذاتية الوتيرة</li>
+                            <li>• تمارين عملية تطبيقية</li>
+                            <li>• سيناريوهات مشاريع حقيقية</li>
+                            <li>• ملفات تمارين قابلة للتحميل</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="card-icon">🏆</div>
+                    <h3 class="card-title">الشهادة</h3>
+                    <div class="card-content">
+                        <ul style="list-style: none; padding: 0;">
+                            <li>• شهادة معترف بها في الصناعة</li>
+                            <li>• معرض مشاريع جاهز للمحفظة</li>
+                            <li>• تحقق بيانات LinkedIn</li>
+                            <li>• وحدات التعليم المستمر (CEUs)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">المنهج الشامل</h2>
+            <p class="section-subtitle">23 وحدة مصممة بخبرة ومنظمة في ثلاث مراحل تدريجية</p>
+
+            <div class="toc-container">
+                <!-- Foundation Phase -->
+                <div class="phase">
+                    <h3 class="phase-title">
+                        مرحلة الأساسيات
+                        <span class="phase-badge">الوحدات 1-8</span>
+                    </h3>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 01</div>
+                            <h4 class="module-title">البدء</h4>
+                            <ul class="module-topics">
+                                <li>مقدمة في دورة User Experience Design</li>
+                                <li>إتقان واجهة Adobe XD</li>
+                                <li>أدوار UI vs UX vs Product Design</li>
+                                <li>إعداد وتنظيم المشروع</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 02</div>
+                            <h4 class="module-title">الموجز</h4>
+                            <ul class="module-topics">
+                                <li>تطوير موجز UX</li>
+                                <li>إنشاء شخصيات المستخدمين</li>
+                                <li>تحليل متطلبات المشروع</li>
+                                <li>أساسيات التواصل مع العملاء</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 03</div>
+                            <h4 class="module-title">الإطارات الشبكية منخفضة الدقة</h4>
+                            <ul class="module-topics">
+                                <li>الإطارات الشبكية منخفضة الدقة في XD</li>
+                                <li>الأبعاد المثلى للويب والجوال</li>
+                                <li>استخدام UI kits والقوالب</li>
+                                <li>أساسيات بنية المعلومات</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 04</div>
+                            <h4 class="module-title">الطباعة والألوان والأيقونات</h4>
+                            <ul class="module-topics">
+                                <li>تنفيذ التسلسل الهرمي للطباعة</li>
+                                <li>تطبيق الألوان وتصميم الأزرار</li>
+                                <li>البحث عن الأيقونات المجانية ودمجها</li>
+                            </ul>
+                            <div class="project-label">مشروع: إطار الصفحة الرئيسية وصفحة الاتصال</div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 05</div>
+                            <h4 class="module-title">مقدمة في النماذج الأولية</h4>
+                            <ul class="module-topics">
+                                <li>التفاعلية الأساسية والنماذج الأولية</li>
+                                <li>النوافذ المنبثقة والطبقات</li>
+                                <li>هياكل التنقل</li>
+                            </ul>
+                            <div class="project-label">مشروع: نموذج أولي تفاعلي</div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 06</div>
+                            <h4 class="module-title">الرموز والشبكات المتكررة</h4>
+                            <ul class="module-topics">
+                                <li>المجموعات ووضع العزل</li>
+                                <li>إنشاء رموز قابلة لإعادة الاستخدام</li>
+                                <li>الشبكات المتكررة للتخطيطات الفعالة</li>
+                            </ul>
+                            <div class="project-label">مشروع: الرموز والشبكات المتكررة</div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 07</div>
+                            <h4 class="module-title">نماذج التطبيقات الأولية</h4>
+                            <ul class="module-topics">
+                                <li>أساسيات مخططات التطبيقات المحمولة</li>
+                                <li>اختبار XD mobile على الأجهزة</li>
+                                <li>عناصر UI خاصة بالجهاز</li>
+                                <li>إنشاء تسجيل الدخول ولوحة القيادة</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 08</div>
+                            <h4 class="module-title">ملاحظات الإطار الشبكي</h4>
+                            <ul class="module-topics">
+                                <li>المشاركة لتعليقات أصحاب المصلحة</li>
+                                <li>تسجيل فيديوهات التفاعل</li>
+                                <li>استراتيجيات دمج الملاحظات</li>
+                            </ul>
+                            <div class="project-label">مشروع: عملية الملاحظات</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Development Phase -->
+                <div class="phase">
+                    <h3 class="phase-title">
+                        مرحلة التطوير
+                        <span class="phase-badge">الوحدات 9-18</span>
+                    </h3>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 09</div>
+                            <h4 class="module-title">تصميم UI عالي الدقة</h4>
+                            <ul class="module-topics">
+                                <li>إنشاء لوحة المزاج والبحث</li>
+                                <li>الانتقال من الإطار الشبكي إلى عالي الدقة</li>
+                                <li>أنظمة الشبكة 12-عمود</li>
+                            </ul>
+                            <div class="project-label">مشروع: تطوير لوحة المزاج</div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 10</div>
+                            <h4 class="module-title">الألوان المتقدمة</h4>
+                            <ul class="module-topics">
+                                <li>نظرية الألوان وتطبيق XD</li>
+                                <li>التدرجات وحيل المعالجة</li>
+                                <li>تطوير نظام ألوان العلامة التجارية</li>
+                            </ul>
+                            <div class="project-label">مشروع: تنفيذ الألوان</div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 11</div>
+                            <h4 class="module-title">النص والخطوط المتقدمة</h4>
+                            <ul class="module-topics">
+                                <li>اختيار الخطوط الآمنة للويب</li>
+                                <li>أنماط الأحرف والأنظمة</li>
+                                <li>تنسيق النص المتقدم</li>
+                            </ul>
+                            <div class="project-label">مشروع: تصميم النص والأزرار</div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 12</div>
+                            <h4 class="module-title">الرسم وأدوات الشعاع</h4>
+                            <ul class="module-topics">
+                                <li>إنشاء أيقونات مخصصة</li>
+                                <li>الأشكال الشعاعية والخطوط</li>
+                                <li>إتقان أداة القلم</li>
+                                <li>تقنيات الرسم المتقدمة</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدات 13-16</div>
+                            <h4 class="module-title">تكامل Creative Suite</h4>
+                            <ul class="module-topics">
+                                <li>سير عمل Illustrator-XD</li>
+                                <li>تعاون InDesign</li>
+                                <li>تكامل Photoshop</li>
+                            </ul>
+                            <div class="project-label">مشاريع: الأيقونات المخصصة والمخططات عالية الدقة</div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 17</div>
+                            <h4 class="module-title">تصميم التطبيقات المتقدم</h4>
+                            <ul class="module-topics">
+                                <li>إنشاء مخططات الأجهزة المحمولة</li>
+                                <li>إرشادات خاصة بالمنصة</li>
+                                <li>التوافق عبر الأجهزة</li>
+                            </ul>
+                            <div class="project-label">مشروع: تصميم تطبيق الجوال</div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 18</div>
+                            <h4 class="module-title">المحتوى والإضافات</h4>
+                            <ul class="module-topics">
+                                <li>ميزات الشبكة المتكررة المتقدمة</li>
+                                <li>إضافة مولد المحتوى</li>
+                                <li>إضافات <span class="en-text">UI Faces</span> و <span class="en-text">PhotoSplash</span></li>
+                                <li>إتقان إضافة <span class="en-text">Copy Cat/Mimic</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Phase -->
+                <div class="phase">
+                    <h3 class="phase-title">
+                        المرحلة المتقدمة
+                        <span class="phase-badge">الوحدات 19-23</span>
+                    </h3>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 19</div>
+                            <h4 class="module-title">إتقان لوحة الأصول</h4>
+                            <ul class="module-topics">
+                                <li>إدارة الأصول المتقدمة</li>
+                                <li>تنظيم نظام التصميم</li>
+                                <li>أفضل ممارسات مكتبة المكونات</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 20</div>
+                            <h4 class="module-title">الرموز المتقدمة</h4>
+                            <ul class="module-topics">
+                                <li>إنشاء رموز معقدة</li>
+                                <li>تقنيات التحسين المتقدمة</li>
+                                <li>إدارة الحالة</li>
+                                <li>المكونات المتداخلة</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 21</div>
+                            <h4 class="module-title">التفاعلات الدقيقة</h4>
+                            <ul class="module-topics">
+                                <li>نظرية التفاعلات الدقيقة لواجهة المستخدم</li>
+                                <li>رسوم الأزرار المتحركة</li>
+                                <li>معارض الصور المتحركة</li>
+                            </ul>
+                            <div class="project-label">مشروع: تنفيذ التفاعلات الدقيقة</div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 22</div>
+                            <h4 class="module-title">النماذج الأولية المتقدمة</h4>
+                            <ul class="module-topics">
+                                <li>انتقالات التأخير الزمني</li>
+                                <li>قوائم منبثقة معقدة</li>
+                                <li>تنقل الجوال المتحرك</li>
+                                <li>تقنيات انتقال السحب</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-number">الوحدة 23</div>
+                            <h4 class="module-title">التصدير والتسليم</h4>
+                            <ul class="module-topics">
+                                <li>تصدير الأصول للمطورين</li>
+                                <li>تصدير الكود باستخدام مواصفات التصميم</li>
+                                <li>أفضل ممارسات تسليم المطورين</li>
+                                <li>توثيق مواصفات التصميم</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Outcomes -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">نتائج التعلم</h2>
+            <p class="section-subtitle">إتقان المهارات التي يبحث عنها أصحاب العمل بنشاط في سوق التصميم الرقمي اليوم</p>
+
+            <div class="outcomes-list">
+                <div class="outcome-item">
+                    <span class="outcome-check">✅</span>
+                    <span><strong>تصميم واجهات احترافية</strong> - إنشاء تصاميم دقيقة ومتمحورة حول المستخدم للويب والجوال</span>
+                </div>
+                <div class="outcome-item">
+                    <span class="outcome-check">✅</span>
+                    <span><strong>إتقان Adobe XD</strong> - استخدام الميزات المتقدمة لسير العمل المهني والفعال</span>
+                </div>
+                <div class="outcome-item">
+                    <span class="outcome-check">✅</span>
+                    <span><strong>بناء نماذج تفاعلية</strong> - تطوير نماذج عالية الدقة وقابلة للاختبار مع الرسوم المتحركة</span>
+                </div>
+                <div class="outcome-item">
+                    <span class="outcome-check">✅</span>
+                    <span><strong>إجراء بحوث المستخدم</strong> - تطبيق طرق بحث UX لإرشاد قرارات التصميم</span>
+                </div>
+                <div class="outcome-item">
+                    <span class="outcome-check">✅</span>
+                    <span><strong>العرض على أصحاب المصلحة</strong> - التواصل الفعال لمفاهيم التصميم للعملاء والفرق</span>
+                </div>
+                <div class="outcome-item">
+                    <span class="outcome-check">✅</span>
+                    <span><strong>تطوير أنظمة التصميم</strong> - إنشاء مكونات تصميم قابلة للتطوير والصيانة</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Features -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">ما هو مُتضمن</h2>
+            <p class="section-subtitle">كل ما تحتاجه لتصبح مصمم UI/UX محترف</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎥</div>
+                    <h3 class="feature-title">دروس الفيديو</h3>
+                    <p>تعليمات خطوة بخطوة مع أمثلة من العالم الحقيقي وتقنيات احترافية</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3 class="feature-title">ملفات التمارين</h3>
+                    <p>ملفات مشاريع قابلة للتحميل، مجموعات UI، وموارد لكل وحدة</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">13 مشروع صفي</h3>
+                    <p>مهام عملية لبناء محفظة كاملة من الأعمال الحقيقية</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3 class="feature-title">تدريب الإضافات</h3>
+                    <p>إتقان إضافات XD الأساسية: مولد المحتوى، UI Faces، PhotoSplash، Copy Cat</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">تكامل Creative Suite</h3>
+                    <p>سير عمل احترافي مع Photoshop وIllustrator وInDesign</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">الاختبار على الجوال</h3>
+                    <p>اختبار نماذجك الأولية على أجهزة iPhone وAndroid الحقيقية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 مؤسسة رفا السمعية والبصرية. جميع الحقوق محفوظة. | Adobe XD علامة تجارية لشركة Adobe Inc.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.7;">حول رؤيتك الإبداعية إلى تجارب رقمية احترافية</p>
+        </div>
+    </footer>
+</body>
+
+</html>
